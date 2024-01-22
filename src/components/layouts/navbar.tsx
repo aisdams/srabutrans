@@ -84,7 +84,7 @@ export default function Navbar() {
                 </Link>
               </li>
 
-             {navbar.children && navbar.title === 'About Us' && (
+              {navbar.children && navbar.title === 'About Us' && (
                 <div
                   onMouseLeave={handleMouseLeave}
                   className={`${
@@ -100,8 +100,6 @@ export default function Navbar() {
                       </li>
                     </ul>
                   ))}
-                </div>
-              )}
                 </div>
               )}
             </ul>
