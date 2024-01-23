@@ -22,6 +22,8 @@ import 'swiper/css/navigation';
 import { Navigation } from 'swiper/modules';
 
 export default function Clients() {
+  const navigationPrevRef = React.useRef(null);
+  const navigationNextRef = React.useRef(null);
   const [modalOpen, setModalOpen] = useState(false);
   const [currentImage, setCurrentImage] = useState(0);
 
@@ -37,48 +39,48 @@ export default function Clients() {
   const imageArray = [
     {
       img: ImageClient1,
-      alt: 'Flexco',
+      name: 'PT. Axia Prima Sejahtera',
     },
     {
       img: ImageClient2,
-      alt: 'gvet',
+      name: 'PT. Neosys Indonesia',
     },
 
     {
       img: ImageClient3,
-      alt: 'han',
+      name: 'PT. Sentra Sauyunan Lestari',
     },
     {
       img: ImageClient4,
-      alt: 'mk',
+      name: 'PT. Parami Ciptakarya',
     },
     {
       img: ImageClient5,
-      alt: 'pss',
+      name: 'PT. Multikarya Pasifik',
     },
     {
       img: ImageClient6,
-      alt: 'strider',
+      name: 'PT. Has Aneuk Nanggro',
     },
     {
       img: ImageClient7,
-      alt: 'heksaef',
+      name: 'PT. Flexco Indonesia Jaya',
     },
     {
       img: ImageClient8,
-      alt: 'transnational',
+      name: 'PT. Global Spirit Intensa',
     },
     {
       img: ImageClient9,
-      alt: 'pt-global-teknindo-berkatama',
+      name: 'PT. Putra Selaras Sentosa',
     },
     {
       img: ImageClient10,
-      alt: 'pt-global-teknindo-berkatama',
+      name: 'PT. Global Tehnik Maju Usaha',
     },
     {
       img: ImageClient11,
-      alt: 'pt-global-teknindo-berkatama',
+      name: 'PT. Transnational Solution',
     },
   ];
 
@@ -106,7 +108,7 @@ export default function Clients() {
           >
             <Image
               src={image.img}
-              alt={image.alt}
+              alt={image.name}
               className="group-hover:opacity-80 transition-opacity duration-300 relative h-[10rem]"
             />
 
@@ -129,9 +131,16 @@ export default function Clients() {
               modules={[Navigation]}
             >
               {imageArray.map((image, index) => (
-                <SwiperSlide key={index}>
-                  <Image src={image.img} alt={image.alt} className="w-[40rem] h-[22rem] grid justify-center mx-auto" />
-                </SwiperSlide>
+                <>
+                  <SwiperSlide key={index}>
+                    <Image
+                      src={image.img}
+                      alt={image.name}
+                      className="w-[40rem] h-[22rem] grid justify-center mx-auto"
+                    />
+                    <h1 className="font-bold text-xl text-center text-white">{image.name}</h1>
+                  </SwiperSlide>
+                </>
               ))}
             </Swiper>
             <button onClick={closeModal} className="absolute top-0 right-[4rem] text-white text-2xl cursor-pointer">

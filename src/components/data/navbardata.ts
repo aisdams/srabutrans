@@ -6,7 +6,7 @@ const NavbarData = [
   },
   {
     title: 'About Us',
-    link: '#',
+    link: '/#aboutus',
     scrollId: 'aboutus',
     children: [
       {

@@ -26,6 +26,19 @@ body {
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
 }
+.swiper-button-next {
+  color: white !important;
+  background: #006838;
+  padding: 2rem;
+  border-radius: 50%;
+}
+
+.swiper-button-prev {
+  color: white !important;
+  background: #006838;
+  padding: 2rem;
+  border-radius: 50%;
+}
 
 html {
   scroll-behavior: smooth;
@@ -60,6 +73,10 @@ body {
   display: inline-block;
   box-sizing: border-box;
   animation: rotation 1s linear infinite;
+}
+
+.swiper-button-next {
+  color: red;
 }
 
 @keyframes rotation {
