@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { Inter } from 'next/font/google';
+import { IoIosArrowDown, IoIosArrowUp, IoIosMenu } from 'react-icons/io';
 import About from '@/components/home/about';
 import Header from '@/components/home/header';
 import SecOne from '@/components/home/SecOne';
@@ -28,6 +30,8 @@ interface NavbarItem {
 export default function Home() {
   const [isTop, setIsTop] = useState(true);
   const [isAboutHovered, setIsAboutHovered] = useState(false);
+  const [isMobileView, setIsMobileView] = useState(false);
+  const [activeNavItem, setActiveNavItem] = useState<number | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -45,6 +49,17 @@ export default function Home() {
 
   useEffect(() => {
     enableSmoothScroll();
+
+    const handleResize = () => {
+      setIsMobileView(window.innerWidth < 768);
+    };
+
+    handleResize();
+
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
   const scrollToElement = (elementId: string) => {
@@ -101,40 +116,102 @@ export default function Home() {
             <div className="Logo">
               <Image src={Logo} alt="" className="w-[150px] h-[30px]" />
             </div>
-            <div className="lg:flex hidden gap-8">
-              {NavbarData.map((navbar: NavbarItem, idx: number) => (
-                <ul key={idx}>
-                  <li onMouseEnter={handleMouseEnter}>
-                    <Link
-                      href={navbar.link}
-                      scroll={false}
-                      onClick={() => scrollToElement(navbar.scrollId || '')}
-                      className="uppercase font-medium text-sm tracking-wider text-whitegray"
-                    >
-                      {navbar.title}
-                    </Link>
-                  </li>
-                  {navbar.children && navbar.title === 'About Us' && (
-                    <div
-                      onMouseLeave={handleMouseLeave}
-                      className={`${
-                        isAboutHovered ? 'block' : 'hidden'
-                      } about-submenu bg-greenThree absolute mt-2 pr-8 pl-5 py-3 space-y-2`}
-                    >
-                      {navbar.children.map((child, childIdx) => (
-                        <ul key={childIdx}>
-                          <li>
-                            <Link href={child.link} className="uppercase text-xs tracking-wide text-white">
-                              {child.title}
-                            </Link>
-                          </li>
-                        </ul>
-                      ))}
-                    </div>
-                  )}
-                </ul>
-              ))}
-            </div>
+            {isMobileView ? (
+              <div className="flex items-center">
+                <Sheet>
+                  <SheetTrigger>
+                    <IoIosMenu className="text-2xl text-white" />
+                  </SheetTrigger>
+                  <SheetContent>
+                    <SheetHeader>
+                      <SheetDescription className="grid my-20 text-left gap-7">
+                        {NavbarData.map((navbar: NavbarItem, idx: number) => (
+                          <ul key={idx}>
+                            <li>
+                              <Link
+                                href={navbar.link}
+                                scroll={false}
+                                onClick={(e) => {
+                                  e.preventDefault();
+                                  setActiveNavItem(activeNavItem === idx ? null : idx);
+                                  scrollToElement(navbar.scrollId || '');
+                                }}
+                                className="uppercase font-medium text-sm tracking-wide flex items-center gap-3"
+                              >
+                                {navbar.title}
+                                {navbar.children &&
+                                  (activeNavItem === idx ? (
+                                    <IoIosArrowUp className="arrow" />
+                                  ) : (
+                                    <IoIosArrowDown className="arrow" />
+                                  ))}
+                              </Link>
+                            </li>
+
+                            {navbar.children && activeNavItem === idx && (
+                              <div className={`about-submenu bg-white mt-3`}>
+                                {navbar.children.map((child, childIdx) => (
+                                  <ul key={childIdx}>
+                                    <li>
+                                      <Link
+                                        href={child.link}
+                                        className="uppercase text-base font-light tracking-wide text-black"
+                                        onClick={() => {
+                                          setIsAboutHovered(false);
+                                          setActiveNavItem(null);
+                                        }}
+                                      >
+                                        {child.title}
+                                      </Link>
+                                    </li>
+                                  </ul>
+                                ))}
+                              </div>
+                            )}
+                          </ul>
+                        ))}
+                      </SheetDescription>
+                    </SheetHeader>
+                  </SheetContent>
+                </Sheet>
+              </div>
+            ) : (
+              <div className="flex gap-8">
+                {NavbarData.map((navbar: NavbarItem, idx: number) => (
+                  <ul key={idx}>
+                    <li onMouseEnter={handleMouseEnter}>
+                      <Link
+                        href={navbar.link}
+                        scroll={false}
+                        onClick={() => scrollToElement(navbar.scrollId || '')}
+                        className="uppercase font-medium text-sm tracking-wide text-white"
+                      >
+                        {navbar.title}
+                      </Link>
+                    </li>
+
+                    {navbar.children && navbar.title === 'About Us' && (
+                      <div
+                        onMouseLeave={handleMouseLeave}
+                        className={`${
+                          isAboutHovered ? 'block' : 'hidden'
+                        } about-submenu bg-greenThree absolute mt-2 pr-8 pl-5 py-3 space-y-2`}
+                      >
+                        {navbar.children.map((child, childIdx) => (
+                          <ul key={childIdx}>
+                            <li>
+                              <Link href={child.link} className="uppercase text-xs tracking-wide text-white">
+                                {child.title}
+                              </Link>
+                            </li>
+                          </ul>
+                        ))}
+                      </div>
+                    )}
+                  </ul>
+                ))}
+              </div>
+            )}
           </nav>
         </div>
       </div>

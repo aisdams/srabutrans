@@ -50,14 +50,14 @@ export default function Footer() {
             sistem operasional perusahaan.
           </h3>
         </div>
-        <div className="grid">
+        <div className="grid lg:mt-0 mt-5">
           <h1 className="mb-3">OFFICE HOURS</h1>
           <hr className="w-full mb-5 border border-dotted border-white" />
           <h3 className="mb-3">Senin - Jum{`'`}at : 09:00 - 17:00</h3>
           <h3 className="mb-3">Sabtu : 09:00 - 14:00</h3>
           <h3 className="mb-3">Minggu : Tutup</h3>
         </div>
-        <div className="grid">
+        <div className="grid lg:mt-0 mt-5">
           <h1 className="mb-3">SOCIAL MEDIA</h1>
           <hr className="w-full mb-5 border border-dotted border-white" />
           {socialmedia.map((ssc, idx) => (
@@ -67,7 +67,7 @@ export default function Footer() {
             </div>
           ))}
         </div>
-        <div className="grid">
+        <div className="grid lg:mt-0 mt-5">
           <h1 className="mb-3">CONTACT</h1>
           <hr className="w-full mb-5 border border-dotted border-white" />
           {contacts.map((contact, idx) => (

@@ -10,7 +10,10 @@ export default function About() {
     setIsOpen(!isOpen);
   };
   return (
-    <div className="w-full grid lg:grid-cols-2 flex-col-reverse mt-20 gap-20 lg:pr-14 px-10 lg:px-3 mb-36" id="aboutus">
+    <div
+      className="w-full grid lg:grid-cols-2 flex-col-reverse mt-20 gap-20 lg:pr-14 px-10 lg:px-3 lg:mb-36 mb-14"
+      id="aboutus"
+    >
       <div className="hidden lg:grid">
         <Image src={AboutImage} alt="" className="w-full scale-105 mt-10" />
       </div>

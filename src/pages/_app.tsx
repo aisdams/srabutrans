@@ -7,7 +7,9 @@ import Layout from '@/components/layouts/layout';
 import { NextPageCustomLayout } from '@/types/_app.type';
 import AppProvider from '@/components/providers/app-provider';
 import enableSmoothScroll from '@/components/data/enableSmoothScroll';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import Loader from '@/components/loader';
+import { useRouter } from 'next/router';
 
 // Memanggil fungsi enableSmoothScroll di sini
 enableSmoothScroll();
@@ -23,6 +25,29 @@ const App = ({
     AOS.init();
     AOS.refresh();
   }, []);
+
+  const [isLoading, setIsLoading] = useState(true);
+
+  const router = useRouter();
+
+  useEffect(() => {
+    const handleRouteChangeStart = () => {
+      setIsLoading(true);
+    };
+
+    const handleRouteChangeComplete = () => {
+      setIsLoading(false);
+    };
+
+    router.events.on('routeChangeStart', handleRouteChangeStart);
+    router.events.on('routeChangeComplete', handleRouteChangeComplete);
+
+    return () => {
+      router.events.off('routeChangeStart', handleRouteChangeStart);
+      router.events.off('routeChangeComplete', handleRouteChangeComplete);
+    };
+  }, [router]);
+
   return (
     <>
       <Head>
@@ -31,7 +56,9 @@ const App = ({
         <link rel="shortcut icon" href="https://thumbs2.imgbox.com/d8/e2/yctnWHf3_t.png" />
       </Head>
       <div>
-        <AppProvider>{getLayout(<Component {...pageProps} />)}</AppProvider>
+        <AppProvider>
+          {isLoading && <Loader />} {getLayout(<Component {...pageProps} />)}
+        </AppProvider>
       </div>
     </>
   );

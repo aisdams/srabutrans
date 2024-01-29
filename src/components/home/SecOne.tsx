@@ -20,9 +20,9 @@ export default function SecOne() {
     },
   ];
   return (
-    <div className="grid lg:grid-cols-3 gap-8 lg:my-40 my-10 px-20">
+    <div className="grid lg:grid-cols-3 gap-8 lg:my-40 my-10 px-20 mx-auto max-w-screen-xl mt-32">
       {secOne.map((section, idx) => (
-        <div key={idx} className="mx-auto grid items-center justify-center">
+        <div key={idx} className="mx-auto grid items-center justify-center text-center">
           {section.img && <Image src={section.img} alt="" className="mx-auto" />}
           <h3 className="text-greenTwo font-medium mt-5 tracking-wider">{section.title}</h3>
         </div>

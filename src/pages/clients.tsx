@@ -22,18 +22,22 @@ import 'swiper/css/navigation';
 import { Navigation } from 'swiper/modules';
 
 export default function Clients() {
-  const navigationPrevRef = React.useRef(null);
-  const navigationNextRef = React.useRef(null);
   const [modalOpen, setModalOpen] = useState(false);
   const [currentImage, setCurrentImage] = useState(0);
+  const [isZoomed, setIsZoomed] = useState(false);
 
   const openModal = (index: number) => {
     setCurrentImage(index);
     setModalOpen(true);
+    setIsZoomed(false);
   };
 
   const closeModal = () => {
     setModalOpen(false);
+  };
+
+  const toggleZoom = () => {
+    setIsZoomed(!isZoomed);
   };
 
   const imageArray = [
@@ -90,7 +94,7 @@ export default function Clients() {
         <Image
           src={ImageClient}
           alt=""
-          className="z-0 min-w-full h-[min(100vh,32rem)] object-cover lg:ob lg:object-cover pt-5 grid"
+          className="z-0 min-w-full h-[min(100vh,32rem)] object-cover lg:object-cover pt-5 grid bg-fixed bg-cover bg-center bg-no-repeat"
         />
         <div className="bg-greenTwo/10 w-full h-[min(100vh,26rem)] z-10 absolute top-0">
           <h1 className="text-white text-6xl font-bold tracking-wider text-start lg:px-40 px-20 my-40 justify-center items-center">
@@ -99,7 +103,7 @@ export default function Clients() {
         </div>
       </div>
 
-      <div className="grid lg:grid-cols-4 grid-cols-2 gap-4 mx-auto justify-center lg:px-40 my-20">
+      <div className="grid lg:grid-cols-4 grid-cols-2 gap-4 mx-auto justify-center lg:px-40 my-20 px-10">
         {imageArray.map((image, index) => (
           <div
             key={index}
@@ -120,8 +124,12 @@ export default function Clients() {
       </div>
 
       {modalOpen && (
-        <div className="fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center bg-black bg-opacity-70 z-50 cursor-zoom-in">
-          <div className="relative max-w-screen-md max-h-screen overflow-hidden pt-14">
+        <div
+          className={`fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center bg-black bg-opacity-70 z-50 cursor-${
+            isZoomed ? 'zoom-out' : 'zoom-in'
+          }`}
+        >
+          <div className="relative max-w-screen-md max-h-screen overflow-hidden pt-14 lg:px-0 px-20">
             <Swiper
               zoom
               spaceBetween={10}
@@ -131,16 +139,21 @@ export default function Clients() {
               modules={[Navigation]}
             >
               {imageArray.map((image, index) => (
-                <>
-                  <SwiperSlide key={index}>
+                <SwiperSlide key={index}>
+                  <div
+                    className={`relative w-[40rem] h-[22rem] grid justify-center mx-auto cursor-${
+                      isZoomed ? 'zoom-out' : 'zoom-in'
+                    }`}
+                    onClick={toggleZoom}
+                  >
                     <Image
                       src={image.img}
                       alt={image.name}
-                      className="w-[40rem] h-[22rem] grid justify-center mx-auto"
+                      className={`w-full h-full ${isZoomed ? 'object-contain' : 'object-cover'}`}
                     />
-                    <h1 className="font-bold text-xl text-center text-white">{image.name}</h1>
-                  </SwiperSlide>
-                </>
+                    <h1 className="font-bold text-lg text-center text-white mt-5">{image.name}</h1>
+                  </div>
+                </SwiperSlide>
               ))}
             </Swiper>
             <button onClick={closeModal} className="absolute top-0 right-[4rem] text-white text-2xl cursor-pointer">

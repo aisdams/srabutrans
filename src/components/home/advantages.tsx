@@ -55,12 +55,12 @@ export default function Advantages() {
             </div>
           ))}
         </div>
-        <div>
+        <div className="lg:grid hidden">
           <Image src={Imageadv} alt="" />
         </div>
         <div className="">
           {AdvantagesTwo.map((advantagetwo, idx) => (
-            <div className="flex items-start gap-5 mb-5 lg:mt-0 mt-10" key={idx}>
+            <div className="flex items-start gap-5 mb-5 mt-0 lg:mt-10" key={idx}>
               <span className="text-3xl text-gray-700">{advantagetwo.icon}</span>
               <div>
                 <h3 className="text-greenTwo font-semibold mb-5 tracking-wider">{advantagetwo.title}</h3>

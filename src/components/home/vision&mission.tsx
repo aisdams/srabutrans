@@ -10,7 +10,7 @@ export default function VisionMission() {
       <h1 className="uppercase font-bold text-greenThree text-4xl mb-14" id="vision&mision">
         VISION
       </h1>
-      <h3 className="lg:px-72 px-0 text-greenTwo font-medium text-[16px]">
+      <h3 className="lg:px-72 px-8 text-greenTwo font-medium text-[16px]">
         Menjadi perusahaan jasa transportasi, logistik, dan gudang, serta sistem operasional perusahaan yang aman dan
         terpercaya di Indonesia dengan mengutamakan layanan berbasis teknologi yang handal dan sumber daya manusia yang
         kompeten.

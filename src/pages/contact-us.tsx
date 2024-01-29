@@ -64,7 +64,11 @@ export default function ContactUs() {
   return (
     <>
       <div className="relative">
-        <Image src={ImageContactUs} alt="" className="z-0 h-[min(100vh,25.5rem)]" />
+        <Image
+          src={ImageContactUs}
+          alt=""
+          className="z-0 min-w-full h-[min(100vh,32rem)] object-cover lg:ob lg:object-cover grid bg-fixed bg-cover bg-center bg-no-repeat"
+        />
         <div className="bg-greenTwo/10 w-full h-[min(100vh,25.5rem)] z-10 absolute top-0">
           <h1 className="uppercase text-white text-6xl font-bold tracking-wider text-center mt-36 justify-center items-center">
             SRABUTRANS

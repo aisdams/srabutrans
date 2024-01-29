@@ -7,8 +7,12 @@ export default function Wms() {
   return (
     <>
       <div className="relative">
-        <Image src={WmsImage} alt="" className="z-0 w-full h-[min(100vh,25.5rem)] object-cover" />
-        <div className="bg-greenTwo/10 w-full h-[min(100vh,25.5rem)] z-10 absolute top-0">
+        <Image
+          src={WmsImage}
+          alt=""
+          className="z-0 w-full h-[min(75vh)] pt-5 bg-cover object-cover bg-fixed bg-no-repeat"
+        />
+        <div className="bg-greenTwo/10 w-full h-[min(75vh)] z-10 absolute mx-auto justify-center items-center my-auto top-0">
           <h1 className="text-white text-6xl font-bold tracking-wider text-center my-36 justify-center items-center">
             WMS
           </h1>

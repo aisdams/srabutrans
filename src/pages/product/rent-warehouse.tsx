@@ -7,7 +7,11 @@ export default function RentWarehouse() {
   return (
     <>
       <div className="relative">
-        <Image src={rentwarehouseImage} alt="" className="z-0 w-full h-[min(100vh,25.5rem)] object-cover" />
+        <Image
+          src={rentwarehouseImage}
+          alt=""
+          className="z-0 w-full h-[min(100vh,25.5rem)]  object-cover lg:object-cover pt-5 grid bg-fixed bg-cover bg-center bg-no-repeat"
+        />
         <div className="bg-greenTwo/10 w-full h-[min(100vh,25.5rem)] z-10 absolute top-0">
           <h1 className="text-white text-6xl font-bold tracking-wider text-center my-36 justify-center items-center">
             RENT <br />

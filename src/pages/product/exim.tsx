@@ -7,7 +7,11 @@ export default function Exim() {
   return (
     <>
       <div className="relative">
-        <Image src={EximImage} alt="" className="z-0 h-[min(100vh,26rem)] pt-5" />
+        <Image
+          src={EximImage}
+          alt=""
+          className="z-0 min-w-full h-[min(100vh,26rem)] object-cover lg:ob lg:object-cover pt-5 grid bg-fixed bg-cover bg-center bg-no-repeat"
+        />
         <div className="bg-greenTwo/10 w-full h-[min(100vh,26rem)] z-10 absolute mx-auto justify-center items-center my-auto top-0">
           <h1 className="text-white text-6xl font-bold tracking-wider text-center my-36 justify-center items-center">
             EXPORT IMPORT
