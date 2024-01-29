@@ -43,7 +43,7 @@ export default function Footer() {
     <div className="w-full bg-greenTwo">
       <div className="lg:px-20 px-10 lg:grid grid-cols-4 text-white pt-14 gap-5 items-start">
         <div className="grid">
-          <h1 className="mb-3">ABOUT SRABUTRANS</h1>
+          <h1 className="mb-3 font-bold">ABOUT SRABUTRANS</h1>
           <hr className="w-full mb-5 border border-dotted border-white" />
           <h3 className="tracking-wide">
             Sarana Buana Trans merupakan perusahaan yang menawarkan jasa transportasi, logistik, dan gudang, serta
@@ -51,14 +51,14 @@ export default function Footer() {
           </h3>
         </div>
         <div className="grid lg:mt-0 mt-5">
-          <h1 className="mb-3">OFFICE HOURS</h1>
+          <h1 className="mb-3 font-bold">OFFICE HOURS</h1>
           <hr className="w-full mb-5 border border-dotted border-white" />
           <h3 className="mb-3">Senin - Jum{`'`}at : 09:00 - 17:00</h3>
           <h3 className="mb-3">Sabtu : 09:00 - 14:00</h3>
           <h3 className="mb-3">Minggu : Tutup</h3>
         </div>
         <div className="grid lg:mt-0 mt-5">
-          <h1 className="mb-3">SOCIAL MEDIA</h1>
+          <h1 className="mb-3 font-bold">SOCIAL MEDIA</h1>
           <hr className="w-full mb-5 border border-dotted border-white" />
           {socialmedia.map((ssc, idx) => (
             <div className="flex items-center gap-3 mt-5" key={idx}>
@@ -68,7 +68,7 @@ export default function Footer() {
           ))}
         </div>
         <div className="grid lg:mt-0 mt-5">
-          <h1 className="mb-3">CONTACT</h1>
+          <h1 className="mb-3 font-bold">CONTACT</h1>
           <hr className="w-full mb-5 border border-dotted border-white" />
           {contacts.map((contact, idx) => (
             <div key={idx} className="flex gap-6 mt-5">

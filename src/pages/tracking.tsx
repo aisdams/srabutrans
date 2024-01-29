@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { IoIosSearch } from 'react-icons/io';
 import TrackingImage from '/public/image/Srabu/tracking1.jpg';
 import Styles from '../styles/tracking.module.css';
+import { toast } from 'react-toastify';
 
 export default function Tracking() {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,6 +20,12 @@ export default function Tracking() {
       setShowTable(true);
     } else {
       setShowTable(false);
+      toast('No Resi not found', {
+        hideProgressBar: true,
+        autoClose: 1000,
+        type: 'error',
+        position: 'top-right',
+      });
     }
   };
 
