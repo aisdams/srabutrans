@@ -106,7 +106,7 @@ export default function Navbar() {
                               setActiveNavItem(activeNavItem === idx ? null : idx);
                               scrollToElement(navbar.scrollId || '');
                             }}
-                            className="uppercase font-medium text-sm tracking-wide flex items-center gap-3"
+                            className="uppercase font-medium text-sm text-[#b7e6bd] tracking-widest flex items-center gap-3"
                           >
                             {navbar.title}
                             {navbar.children &&
@@ -146,7 +146,7 @@ export default function Navbar() {
             </Sheet>
           </div>
         ) : (
-          <div className="flex gap-8">
+          <div className="flex gap-8 items-center">
             {NavbarData.map((navbar: NavbarItem, idx: number) => (
               <ul key={idx}>
                 <li onMouseEnter={handleMouseEnter}>
@@ -154,7 +154,7 @@ export default function Navbar() {
                     href={navbar.link}
                     scroll={false}
                     onClick={() => scrollToElement(navbar.scrollId || '')}
-                    className="uppercase font-medium text-sm tracking-wide text-white"
+                    className="uppercase font-medium text-sm text-[#b7e6bd] tracking-widest flex items-center gap-3"
                   >
                     {navbar.title}
                   </Link>

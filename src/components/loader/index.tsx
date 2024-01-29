@@ -7,7 +7,7 @@ export default function Loader() {
     setIsVisible(true);
     setTimeout(() => {
       setIsVisible(false);
-    }, 5000);
+    }, 3000);
   }, []);
 
   return isVisible ? (

@@ -63,10 +63,10 @@ export default function Tracking() {
           className="z-0 min-w-full h-[min(100vh,32rem)] object-cover lg:ob lg:object-cover grid bg-fixed bg-cover bg-center bg-no-repeat"
         />
         <div className="bg-greenTwo/10 w-full h-[min(100vh,25.5rem)] z-10 absolute top-0 lg:pl-40 pl-14">
-          <h1 className="text-white text-6xl font-bold tracking-widest text-start lg:mt-40 mt-52 justify-center items-center">
+          <h1 className="text-white text-6xl font-bold tracking-wider text-start lg:mt-40 mt-52 justify-center items-center">
             TRACKING
           </h1>
-          <h3 className="text-base italic text-white mt-5">Track your package here</h3>
+          <h3 className="text-base italic text-white mt-5 px-14 !font-volk tracking-wide">Track your package here</h3>
         </div>
       </div>
 

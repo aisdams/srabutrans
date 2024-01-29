@@ -28,8 +28,8 @@ export default function Header() {
       }}
     >
       <div className="absolute top-1/3 text-left text-white z-10 w-full lg:pl-24 pl-8">
-        <h1 className="font-medium lg:text-7xl text-6xl mb-8">SRABU TRANS</h1>
-        <h3 className="font-medium tracking-wide">
+        <h1 className="font-bold lg:text-7xl text-6xl mb-8">SRABU TRANS</h1>
+        <h3 className="font-bold tracking-wide">
           TRANSPORTATION, LOGISTIC, WAREHOUSE SERVICES, <br /> AND COMPANY OPERATIONS MANAGEMENT SYSTEM
         </h3>
         <button className="uppercase px-8 bg-greenOne border border-white hover:bg-greenTwo mt-10 rounded-full text-xs py-2 cursor-pointer">

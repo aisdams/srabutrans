@@ -73,7 +73,7 @@ export default function ContactUs() {
           <h1 className="uppercase text-white text-6xl font-bold tracking-wider text-center mt-36 justify-center items-center">
             SRABUTRANS
           </h1>
-          <h3 className="italic text-white tracking-wider text-center justify-center items-center text-base mt-5">
+          <h3 className="italic text-white text-center justify-center items-center text-base mt-8 !font-volk">
             Sarana Buana Trans merupakan perusahaan yang menawarkan jasa <br /> transportasi, logistik, dan gudang,
             serta sistem operasional perusahaan
           </h3>
