@@ -18,13 +18,13 @@ export default function VisionMission() {
       <h1 className="uppercase font-bold text-greenThree text-4xl my-14">MISION</h1>
       <div className="grid lg:grid-cols-3 mx-24">
         <div className="overflow-hidden">
-          <Image src={MissionOne} className="hover:scale-125 duration-300 transition-all" alt="" />
+          <Image src={MissionOne} alt="" />
         </div>
         <div className="overflow-hidden">
-          <Image src={MissionTwo} className="hover:scale-125 duration-300 transition-all" alt="" />
+          <Image src={MissionTwo} alt="" />
         </div>
         <div className="overflow-hidden">
-          <Image src={MissionThree} className="hover:scale-125 duration-300 transition-all" alt="" />
+          <Image src={MissionThree} alt="" />
         </div>
       </div>
     </div>

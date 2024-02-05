@@ -113,6 +113,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+#nprogress .bar {
+  background: #fff !important;
+}
+
 .loader-container {
   position: fixed;
   top: 0;

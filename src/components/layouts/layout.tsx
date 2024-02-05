@@ -5,6 +5,7 @@ import Footer from '@/components/layouts/footer';
 import Navbar from '@/components/layouts/navbar';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import React, { useEffect, useRef, useState } from 'react';
+import ProgressBarProvider from '../providers/progress-bar-provider';
 
 type LayoutProps = {
   children: React.ReactNode;
@@ -43,11 +44,13 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     return () => ctx.revert();
   }, []);
   return (
-    <div className="h-screen relative">
-      {!isHomePage && <Navbar />}
-      <div>{children}</div>
-      <Footer />
-    </div>
+    <ProgressBarProvider>
+      <div className="h-screen relative">
+        {!isHomePage && <Navbar />}
+        <div>{children}</div>
+        <Footer />
+      </div>
+    </ProgressBarProvider>
   );
 };
 

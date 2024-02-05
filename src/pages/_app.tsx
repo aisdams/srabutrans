@@ -8,8 +8,8 @@ import { NextPageCustomLayout } from '@/types/_app.type';
 import AppProvider from '@/components/providers/app-provider';
 import enableSmoothScroll from '@/components/data/enableSmoothScroll';
 import { useEffect, useState } from 'react';
-import Loader from '@/components/loader';
 import { useRouter } from 'next/router';
+import imageFavicon from '../../public/srabu.ico';
 
 // Memanggil fungsi enableSmoothScroll di sini
 enableSmoothScroll();
@@ -53,12 +53,10 @@ const App = ({
       <Head>
         <title>SrabuTrans | Logistic & Transport Solution</title>
         <meta name="keywords" key="keywords" content="SrabuTrans" />
-        <link rel="shortcut icon" href="https://thumbs2.imgbox.com/d8/e2/yctnWHf3_t.png" />
+        <link rel="icon" href="/srabu2.ico" sizes="any" />
       </Head>
       <div>
-        <AppProvider>
-          {isLoading && <Loader />} {getLayout(<Component {...pageProps} />)}
-        </AppProvider>
+        <AppProvider initialLoading={false}>{getLayout(<Component {...pageProps} />)}</AppProvider>
       </div>
     </>
   );
