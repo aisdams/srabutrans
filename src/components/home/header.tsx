@@ -25,7 +25,7 @@ export default function Header() {
       style={{ transform: `translateY(${parallaxOffset}px)` }}
     >
       <div className="z-0 md:min-w-full h-[min(100vh,38rem)] overflow-hidden">
-        <Image src={HeaderImage} alt="" className="absolute right-0 lg:w-[53rem] lg:block hidden" id="home" />
+        <Image src={HeaderImage} alt="" className="absolute lg:right-0 lg:w-[53rem] lg:top-0 bottom-0" id="home" />
       </div>
       <div className="bg-greenTwo/10 w-full h-[min(100vh,25.5rem)] z-10 absolute top-0 lg:pl-24 text-white my-40 lg:text-left text-center">
         <h1 className="font-medium text-7xl mb-8">SRABU TRANS</h1>
