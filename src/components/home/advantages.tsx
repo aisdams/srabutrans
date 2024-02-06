@@ -41,7 +41,7 @@ export default function Advantages() {
     },
   ];
   return (
-    <div className="grid justify-center mx-auto w-full lg:px-20 px-5 items-center">
+    <div className="grid justify-center mx-auto w-[min(90%,1280px)] items-center">
       <h1 className="uppercase font-bold text-greenThree text-4xl mb-20 text-center">advantages</h1>
       <div className="grid lg:grid-cols-[1fr_1.5fr_1fr] gap-5">
         <div className="px-3">

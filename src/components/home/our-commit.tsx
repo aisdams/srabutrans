@@ -11,7 +11,7 @@ export default function OurCommit() {
   };
 
   return (
-    <div className="block lg:px-32 px-8 lg:mb-52 mb-10" id="commitment">
+    <div className="block w-[min(90%,1280px)] mx-auto lg:mb-52 mb-10" id="commitment">
       <div className="lg:flex grid flex-1 items-center">
         <div className="text-justify text-greytext font-medium">
           <h1 className="uppercase font-bold text-greenThree text-4xl mb-12">Our Commitment</h1>

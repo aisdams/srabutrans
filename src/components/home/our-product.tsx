@@ -44,7 +44,7 @@ export default function OurProduct() {
   return (
     <div className="mb-24" id="product">
       <h1 className="uppercase font-bold text-greenThree text-4xl mb-14 text-center">Our Product</h1>
-      <div className="grid lg:grid-cols-3 gap-14 text-center lg:px-28 px-14">
+      <div className="grid lg:grid-cols-3 gap-14 text-center w-[min(90%,1280px)] mx-auto lg:px-0 px-10">
         {products.map((product, idx) => (
           <div key={idx}>
             <Link href={product.link} className="hover:opacity-30 duration-500 transition-all">

@@ -224,7 +224,7 @@ export default function Home() {
       </div>
       <WantToSee />
       <OurCommit />
-      <div className="mx-auto px-20 my-20" id="value">
+      <div className="mx-auto w-[min(90%,1280px)] my-20" id="value">
         <h1 className="uppercase font-bold text-greenThree text-4xl mb-14 text-center">Our Value</h1>
         <Image src={ImageVal} alt="" />
       </div>

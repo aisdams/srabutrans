@@ -57,10 +57,10 @@ export default function Clients() {
     },
   ];
   return (
-    <div className="lg:mt-32 my-10 lg:mb-20 px-20">
+    <div className="lg:mt-32 my-10 lg:mb-20 w-[min(90%,1280px)] mx-auto lg:px-0 px-10">
       <Swiper
         slidesPerView={8}
-        spaceBetween={10}
+        spaceBetween={40}
         loop={true}
         breakpoints={{
           0: {
