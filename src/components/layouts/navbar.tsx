@@ -81,7 +81,7 @@ export default function Navbar() {
   const [activeNavItem, setActiveNavItem] = useState<number | null>(null);
 
   return (
-    <div className={`${scrolled ? 'top-8' : ''} w-full top-0 bg-greenThree py-2 px-20 !z-20 fixed`}>
+    <div className={`${scrolled ? 'top-8' : ''} w-full top-0 bg-greenThree py-2 !z-20 fixed`}>
       <nav className="flex justify-between z-20">
         <div className="Logo">
           <Image src={Logo} alt="" className="w-[150px] h-[30px]" />

@@ -108,11 +108,9 @@ export default function Home() {
     <main className="relative">
       <div className="">
         <div
-          className={`w-full fixed top-0 py-2 lg:px-24 px-10 z-20 ${
-            isTop ? 'bg-transparent py-5' : 'bg-greenThree'
-          } transition-all`}
+          className={`w-full fixed top-0 py-2 z-20 ${isTop ? 'bg-transparent py-5' : 'bg-greenThree'} transition-all`}
         >
-          <nav className="flex justify-between z-20">
+          <nav className="flex justify-between z-20 w-[min(90%,1280px)] mx-auto">
             <div className="Logo">
               <Image src={Logo} alt="" className="w-[150px] h-[30px]" />
             </div>
